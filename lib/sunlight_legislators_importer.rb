@@ -1,14 +1,23 @@
 require 'csv'
 
+
 class SunlightLegislatorsImporter
   def self.import(filename)
     csv = CSV.new(File.open(filename), :headers => true)
     csv.each do |row|
+
+      hash = Hash.new
+      not_needed_columns = %w( nickname district congress_office bioguide_id votesmart_id fec_id govtrack_id crp_id congresspedia_url
+                               youtube_url facebook_id official_rss senate_class )
       row.each do |field, value|
-        # TODO: begin
-        raise NotImplementedError, "TODO: figure out what to do with this row and do it!"
-        # TODO: end
+        unless not_needed_columns.include?(field)
+          hash[field] = value
+        end
       end
+
+      # hash => { :firstname => "kevin", :lastname => "sia", :gender => 'm'}
+
+      Legislator.create(hash)
     end
   end
 end

@@ -27,6 +27,11 @@ task "db:version" do
   puts "Current version: #{ActiveRecord::Migrator.current_version}"
 end
 
+desc 'Seeds the database'
+task "db:seed" do
+  SunlightLegislatorsImporter.import('db/data/legislators.csv')
+end
+
 desc "Run the specs"
 RSpec::Core::RakeTask.new(:specs)
 

@@ -1,0 +1,26 @@
+models
+- 1 model -> legislator
+- use title and state column to select rep / sen from that state
+- use title and party column to select rep / sen with that party affiliation
+- use AR methods to use methods: name, phone, fax. website, email, party affiliation, gender, birthdate, twitter_id
+- use in_office column to determine status
+
+database
+- column needed:
+- string -> title
+- string ->state
+- string -> party
+- string -> firstname
+- string -> lastname
+- string -> middlename
+- string -> name_suffix
+- string -> phone
+- string -> fax
+- string -> website
+- string -> webform
+- string -> gender
+- date -> birthdate
+- string -> twitter_id 
+- boolean -> in_office
+
+
