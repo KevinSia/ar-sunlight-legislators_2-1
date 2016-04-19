@@ -14,9 +14,7 @@ class SunlightLegislatorsImporter
           hash[field] = value
         end
       end
-
       # hash => { :firstname => "kevin", :lastname => "sia", :gender => 'm'}
-
       Legislator.create(hash)
     end
   end

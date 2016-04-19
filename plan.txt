@@ -20,7 +20,13 @@ database
 - string -> webform
 - string -> gender
 - date -> birthdate
-- string -> twitter_id 
+- string -> twitter_id
 - boolean -> in_office
+
+=> gives total sen and rep count for each state
+select count(*), title, state from legislators group by state, title order by state
+
+=> group by state and order by sum
+select state, title from (select count(*) as total, title, state from legislators group by state, title order by state) group by state, title order by sum(total)
 
 

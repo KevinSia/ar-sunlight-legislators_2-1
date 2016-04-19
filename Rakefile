@@ -32,6 +32,11 @@ task "db:seed" do
   SunlightLegislatorsImporter.import('db/data/legislators.csv')
 end
 
+desc 'Fires up console'
+task "console" do
+  exec 'irb -r ./main.rb'
+end
+
 desc "Run the specs"
 RSpec::Core::RakeTask.new(:specs)
 
